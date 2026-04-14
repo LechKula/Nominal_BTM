@@ -12,3 +12,8 @@ Authors: Daniel McCauley, Lech Kula
 - If changes are made to the model, then these changes need to be repeated in the "get_cost_to_go" and "optimization_problem_steady_state" functions as well. 
 - Control variables Q_heat and omega are scaled.
 - Warm start the simulation. Can be removed by changing T_warmstart to 0
+
+# Overview
+- Model in BatteryDynamics.model
+- Steady state target input problem defined in BatteryDynamics.optimization_problem_steady_state
+- OCP defined in MPC.ocp
