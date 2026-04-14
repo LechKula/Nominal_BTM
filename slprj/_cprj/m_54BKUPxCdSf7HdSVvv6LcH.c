@@ -1,7 +1,7 @@
 /* Include files */
 
 #include "modelInterface.h"
-#include "m_lOHat2Ol6eEqS22di7nwME.h"
+#include "m_54BKUPxCdSf7HdSVvv6LcH.h"
 #include "mwstringutil.h"
 
 /* Type Definitions */
@@ -13,107 +13,107 @@
 /* Variable Definitions */
 
 /* Function Declarations */
-static void cgxe_mdl_start(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance);
-static void cgxe_mdl_initialize(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_start(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance);
+static void cgxe_mdl_initialize(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance);
-static void cgxe_mdl_outputs(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_outputs(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance);
-static void cgxe_mdl_update(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_update(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance);
-static void cgxe_mdl_derivative(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_derivative(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance);
-static void cgxe_mdl_enable(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_enable(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance);
-static void cgxe_mdl_disable(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_disable(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance);
-static void cgxe_mdl_terminate(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_terminate(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance);
-static void CheckPythonError(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void CheckPythonError(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *pyObjsToRelease[], int32_T numObjToRelease);
-static real_T PyObj_marshalIn(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static real_T PyObj_marshalIn(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *pyToMarshal, PyObject *pyOwner);
 static PyObject *getPyNamespaceDict(void);
-static void assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
+static void assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance,
   PyObject *dict, char_T *key, real_T val);
-static void b_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void b_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void c_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void c_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
 static void d_assignToPyDict(PyObject *dict, char_T *key, PyObject *val);
-static void e_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void e_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void f_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void f_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void g_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void g_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
+static void execPyScript(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance,
   char_T *script, PyObject *ns);
-static PyObject *getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *b_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *b_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *c_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *c_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *d_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *d_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *e_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *e_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *f_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *f_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static void h_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void h_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void i_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void i_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void j_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void j_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void k_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void k_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void l_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void l_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void m_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void m_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void n_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void n_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void o_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void o_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void p_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void p_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void q_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void q_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void r_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void r_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val);
-static void b_execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
+static void b_execPyScript(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance,
   char_T *script, PyObject *ns);
-static PyObject *g_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *g_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *h_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *h_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *i_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *i_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *j_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *j_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *k_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *k_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
-static PyObject *l_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *l_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key);
 static int32_T deleteDictItem(PyObject *dict, char_T *key);
 static int32_T b_deleteDictItem(PyObject *dict, char_T *key);
 static int32_T c_deleteDictItem(PyObject *dict, char_T *key);
 static int32_T d_deleteDictItem(PyObject *dict, char_T *key);
 static int32_T e_deleteDictItem(PyObject *dict, char_T *key);
-static void c_execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
+static void c_execPyScript(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance,
   char_T *script, PyObject *ns);
-static void init_simulink_io_address(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void init_simulink_io_address(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance);
 
 /* Function Definitions */
-static void cgxe_mdl_start(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance)
+static void cgxe_mdl_start(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance)
 {
   init_simulink_io_address(moduleInstance);
   cgxertSetSimStateCompliance(moduleInstance->S, 4);
 }
 
-static void cgxe_mdl_initialize(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_initialize(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance)
 {
   PyObject *r;
@@ -133,8 +133,7 @@ static void cgxe_mdl_initialize(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   g_assignToPyDict(moduleInstance, moduleInstance->namespaceDict,
                    "pred_error_nn", 0.0);
   execPyScript(moduleInstance,
-               "from nominal_acados_mpc_battery import Controller #MLP, BatteryLearnedDynamics, MPC, Controller\nmyController = Controller();\nm"
-               "yController.setup(20.5+273.15, -10 + 273.15)\n",
+               "from nominal_acados_mpc_battery import Controller\nmyController = Controller();\nmyController.setup(20.5+273.15, -10 + 273.15)\n",
                moduleInstance->namespaceDict);
   r = getPyDictVal(moduleInstance, moduleInstance->namespaceDict, "Q_heat");
   *moduleInstance->b_y1 = PyObj_marshalIn(moduleInstance, r, NULL);
@@ -159,7 +158,7 @@ static void cgxe_mdl_initialize(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   PyGILState_Release(moduleInstance->GIL);
 }
 
-static void cgxe_mdl_outputs(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_outputs(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance)
 {
   PyObject *r;
@@ -212,31 +211,31 @@ static void cgxe_mdl_outputs(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   PyGILState_Release(moduleInstance->GIL);
 }
 
-static void cgxe_mdl_update(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_update(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance)
 {
   (void)moduleInstance;
 }
 
-static void cgxe_mdl_derivative(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_derivative(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance)
 {
   (void)moduleInstance;
 }
 
-static void cgxe_mdl_enable(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_enable(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance)
 {
   (void)moduleInstance;
 }
 
-static void cgxe_mdl_disable(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_disable(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance)
 {
   (void)moduleInstance;
 }
 
-static void cgxe_mdl_terminate(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void cgxe_mdl_terminate(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance)
 {
   moduleInstance->GIL = PyGILState_Ensure();
@@ -250,7 +249,7 @@ static void cgxe_mdl_terminate(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   PyGILState_Release(moduleInstance->GIL);
 }
 
-static void CheckPythonError(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void CheckPythonError(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *pyObjsToRelease[], int32_T numObjToRelease)
 {
   PyObject *pMsg;
@@ -337,7 +336,7 @@ static void CheckPythonError(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   suMoveReturnedStringsToTopOfCallerStack(i, 0);
 }
 
-static real_T PyObj_marshalIn(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static real_T PyObj_marshalIn(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *pyToMarshal, PyObject *pyOwner)
 {
   PyObject *pyObjArray[1];
@@ -360,7 +359,7 @@ static PyObject *getPyNamespaceDict(void)
   return PyDict_Copy(PyModule_GetDict(PyImport_AddModule("__main__")));
 }
 
-static void assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
+static void assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance,
   PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -372,7 +371,7 @@ static void assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance
   }
 }
 
-static void b_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void b_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -384,7 +383,7 @@ static void b_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void c_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void c_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -404,7 +403,7 @@ static void d_assignToPyDict(PyObject *dict, char_T *key, PyObject *val)
   }
 }
 
-static void e_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void e_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -416,7 +415,7 @@ static void e_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void f_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void f_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -428,7 +427,7 @@ static void f_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void g_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void g_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -440,7 +439,7 @@ static void g_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
+static void execPyScript(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance,
   char_T *script, PyObject *ns)
 {
   PyObject *pyObjArray[2];
@@ -480,7 +479,7 @@ static void execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
   }
 }
 
-static PyObject *getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -490,7 +489,7 @@ static PyObject *getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *b_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *b_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -500,7 +499,7 @@ static PyObject *b_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *c_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *c_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -510,7 +509,7 @@ static PyObject *c_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *d_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *d_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -520,7 +519,7 @@ static PyObject *d_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *e_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *e_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -530,7 +529,7 @@ static PyObject *e_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *f_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *f_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -540,7 +539,7 @@ static PyObject *f_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static void h_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void h_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -552,7 +551,7 @@ static void h_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void i_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void i_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -564,7 +563,7 @@ static void i_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void j_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void j_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -576,7 +575,7 @@ static void j_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void k_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void k_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -588,7 +587,7 @@ static void k_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void l_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void l_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -600,7 +599,7 @@ static void l_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void m_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void m_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -612,7 +611,7 @@ static void m_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void n_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void n_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -624,7 +623,7 @@ static void n_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void o_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void o_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -636,7 +635,7 @@ static void o_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void p_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void p_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -648,7 +647,7 @@ static void p_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void q_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void q_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -660,7 +659,7 @@ static void q_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void r_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void r_assignToPyDict(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key, real_T val)
 {
   PyObject *pyObj;
@@ -672,7 +671,7 @@ static void r_assignToPyDict(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   }
 }
 
-static void b_execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
+static void b_execPyScript(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance,
   char_T *script, PyObject *ns)
 {
   PyObject *pyObjArray[2];
@@ -712,7 +711,7 @@ static void b_execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance
   }
 }
 
-static PyObject *g_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *g_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -722,7 +721,7 @@ static PyObject *g_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *h_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *h_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -732,7 +731,7 @@ static PyObject *h_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *i_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *i_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -742,7 +741,7 @@ static PyObject *i_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *j_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *j_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -752,7 +751,7 @@ static PyObject *j_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *k_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *k_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -762,7 +761,7 @@ static PyObject *k_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
   return b_value;
 }
 
-static PyObject *l_getPyDictVal(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static PyObject *l_getPyDictVal(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance, PyObject *dict, char_T *key)
 {
   PyObject *b_value;
@@ -822,7 +821,7 @@ static int32_T e_deleteDictItem(PyObject *dict, char_T *key)
   return 0;
 }
 
-static void c_execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance,
+static void c_execPyScript(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance,
   char_T *script, PyObject *ns)
 {
   PyObject *pyObjArray[2];
@@ -846,7 +845,7 @@ static void c_execPyScript(InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance
   }
 }
 
-static void init_simulink_io_address(InstanceStruct_lOHat2Ol6eEqS22di7nwME
+static void init_simulink_io_address(InstanceStruct_54BKUPxCdSf7HdSVvv6LcH
   *moduleInstance)
 {
   moduleInstance->emlrtRootTLSGlobal = (void *)cgxertGetEMLRTCtx
@@ -868,70 +867,70 @@ static void init_simulink_io_address(InstanceStruct_lOHat2Ol6eEqS22di7nwME
 }
 
 /* CGXE Glue Code */
-static void mdlOutputs_lOHat2Ol6eEqS22di7nwME(SimStruct *S, int_T tid)
+static void mdlOutputs_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S, int_T tid)
 {
-  InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance =
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME *)cgxertGetRuntimeInstance(S);
+  InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance =
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *)cgxertGetRuntimeInstance(S);
   cgxe_mdl_outputs(moduleInstance);
 }
 
-static void mdlInitialize_lOHat2Ol6eEqS22di7nwME(SimStruct *S)
+static void mdlInitialize_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S)
 {
-  InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance =
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME *)cgxertGetRuntimeInstance(S);
+  InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance =
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *)cgxertGetRuntimeInstance(S);
   cgxe_mdl_initialize(moduleInstance);
 }
 
-static void mdlUpdate_lOHat2Ol6eEqS22di7nwME(SimStruct *S, int_T tid)
+static void mdlUpdate_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S, int_T tid)
 {
-  InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance =
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME *)cgxertGetRuntimeInstance(S);
+  InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance =
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *)cgxertGetRuntimeInstance(S);
   cgxe_mdl_update(moduleInstance);
 }
 
-static void mdlDerivatives_lOHat2Ol6eEqS22di7nwME(SimStruct *S)
+static void mdlDerivatives_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S)
 {
-  InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance =
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME *)cgxertGetRuntimeInstance(S);
+  InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance =
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *)cgxertGetRuntimeInstance(S);
   cgxe_mdl_derivative(moduleInstance);
 }
 
-static void mdlTerminate_lOHat2Ol6eEqS22di7nwME(SimStruct *S)
+static void mdlTerminate_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S)
 {
-  InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance =
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME *)cgxertGetRuntimeInstance(S);
+  InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance =
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *)cgxertGetRuntimeInstance(S);
   cgxe_mdl_terminate(moduleInstance);
   free((void *)moduleInstance);
 }
 
-static void mdlEnable_lOHat2Ol6eEqS22di7nwME(SimStruct *S)
+static void mdlEnable_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S)
 {
-  InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance =
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME *)cgxertGetRuntimeInstance(S);
+  InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance =
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *)cgxertGetRuntimeInstance(S);
   cgxe_mdl_enable(moduleInstance);
 }
 
-static void mdlDisable_lOHat2Ol6eEqS22di7nwME(SimStruct *S)
+static void mdlDisable_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S)
 {
-  InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance =
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME *)cgxertGetRuntimeInstance(S);
+  InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance =
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *)cgxertGetRuntimeInstance(S);
   cgxe_mdl_disable(moduleInstance);
 }
 
-static void mdlStart_lOHat2Ol6eEqS22di7nwME(SimStruct *S)
+static void mdlStart_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S)
 {
-  InstanceStruct_lOHat2Ol6eEqS22di7nwME *moduleInstance =
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME *)calloc(1, sizeof
-    (InstanceStruct_lOHat2Ol6eEqS22di7nwME));
+  InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *moduleInstance =
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH *)calloc(1, sizeof
+    (InstanceStruct_54BKUPxCdSf7HdSVvv6LcH));
   moduleInstance->S = S;
   cgxertSetRuntimeInstance(S, (void *)moduleInstance);
-  ssSetmdlOutputs(S, mdlOutputs_lOHat2Ol6eEqS22di7nwME);
-  ssSetmdlInitializeConditions(S, mdlInitialize_lOHat2Ol6eEqS22di7nwME);
-  ssSetmdlUpdate(S, mdlUpdate_lOHat2Ol6eEqS22di7nwME);
-  ssSetmdlDerivatives(S, mdlDerivatives_lOHat2Ol6eEqS22di7nwME);
-  ssSetmdlTerminate(S, mdlTerminate_lOHat2Ol6eEqS22di7nwME);
-  ssSetmdlEnable(S, mdlEnable_lOHat2Ol6eEqS22di7nwME);
-  ssSetmdlDisable(S, mdlDisable_lOHat2Ol6eEqS22di7nwME);
+  ssSetmdlOutputs(S, mdlOutputs_54BKUPxCdSf7HdSVvv6LcH);
+  ssSetmdlInitializeConditions(S, mdlInitialize_54BKUPxCdSf7HdSVvv6LcH);
+  ssSetmdlUpdate(S, mdlUpdate_54BKUPxCdSf7HdSVvv6LcH);
+  ssSetmdlDerivatives(S, mdlDerivatives_54BKUPxCdSf7HdSVvv6LcH);
+  ssSetmdlTerminate(S, mdlTerminate_54BKUPxCdSf7HdSVvv6LcH);
+  ssSetmdlEnable(S, mdlEnable_54BKUPxCdSf7HdSVvv6LcH);
+  ssSetmdlDisable(S, mdlDisable_54BKUPxCdSf7HdSVvv6LcH);
   cgxe_mdl_start(moduleInstance);
 
   {
@@ -941,34 +940,34 @@ static void mdlStart_lOHat2Ol6eEqS22di7nwME(SimStruct *S)
   }
 }
 
-static void mdlProcessParameters_lOHat2Ol6eEqS22di7nwME(SimStruct *S)
+static void mdlProcessParameters_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S)
 {
 }
 
-void method_dispatcher_lOHat2Ol6eEqS22di7nwME(SimStruct *S, int_T method, void
+void method_dispatcher_54BKUPxCdSf7HdSVvv6LcH(SimStruct *S, int_T method, void
   *data)
 {
   switch (method) {
    case SS_CALL_MDL_START:
-    mdlStart_lOHat2Ol6eEqS22di7nwME(S);
+    mdlStart_54BKUPxCdSf7HdSVvv6LcH(S);
     break;
 
    case SS_CALL_MDL_PROCESS_PARAMETERS:
-    mdlProcessParameters_lOHat2Ol6eEqS22di7nwME(S);
+    mdlProcessParameters_54BKUPxCdSf7HdSVvv6LcH(S);
     break;
 
    default:
     /* Unhandled method */
     /*
        sf_mex_error_message("Stateflow Internal Error:\n"
-       "Error calling method dispatcher for module: lOHat2Ol6eEqS22di7nwME.\n"
+       "Error calling method dispatcher for module: 54BKUPxCdSf7HdSVvv6LcH.\n"
        "Can't handle method %d.\n", method);
      */
     break;
   }
 }
 
-mxArray *cgxe_lOHat2Ol6eEqS22di7nwME_BuildInfoUpdate(void)
+mxArray *cgxe_54BKUPxCdSf7HdSVvv6LcH_BuildInfoUpdate(void)
 {
   mxArray * mxBIArgs;
   mxArray * elem_1;
@@ -987,7 +986,7 @@ mxArray *cgxe_lOHat2Ol6eEqS22di7nwME_BuildInfoUpdate(void)
   return mxBIArgs;
 }
 
-mxArray *cgxe_lOHat2Ol6eEqS22di7nwME_fallback_info(void)
+mxArray *cgxe_54BKUPxCdSf7HdSVvv6LcH_fallback_info(void)
 {
   const char* fallbackInfoFields[] = { "fallbackType", "incompatiableSymbol" };
 

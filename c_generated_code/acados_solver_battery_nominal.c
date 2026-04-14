@@ -691,8 +691,8 @@ void battery_nominal_acados_setup_nlp_in(battery_nominal_solver_capsule* capsule
     double* lbx0 = lubx0;
     double* ubx0 = lubx0 + NBX0;
     // change only the non-zero elements:
-    lbx0[0] = 263.15;
-    ubx0[0] = 263.15;
+    lbx0[0] = 292.15;
+    ubx0[0] = 292.15;
     lbx0[1] = 1;
     ubx0[1] = 1;
 
@@ -1036,7 +1036,7 @@ void battery_nominal_acados_set_nlp_out(battery_nominal_solver_capsule* capsule)
     double* x0 = xu0;
 
     // initialize with x0
-    x0[0] = 263.15;
+    x0[0] = 292.15;
     x0[1] = 1;
 
 

@@ -8,7 +8,7 @@ LD = $(CC)
  
 MODEL  = Cool_and_Heat_EVBatteryCoolingSystem
 TARGET = cgxe
-MODULE_SRCS 	= m_lOHat2Ol6eEqS22di7nwME.c
+MODULE_SRCS 	= m_VCq71w9yuDy4WDcI1keLWF.c
 MODEL_SRC	= Cool_and_Heat_EVBatteryCoolingSystem_cgxe.c
 MODEL_REG    = Cool_and_Heat_EVBatteryCoolingSystem_cgxe_registry.c
 MAKEFILE    = Cool_and_Heat_EVBatteryCoolingSystem_cgxe.mku

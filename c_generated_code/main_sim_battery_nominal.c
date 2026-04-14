@@ -67,7 +67,7 @@ int main()
     x_current[1] = 0.0;
 
   
-    x_current[0] = 263.15;
+    x_current[0] = 292.15;
     x_current[1] = 1;
     
   

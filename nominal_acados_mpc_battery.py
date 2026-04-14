@@ -759,7 +759,7 @@ class Controller:
         self.T_bat_last = T_bat_0
         if (self.current_iterate * self.dt) < self.T_warm_start:
             if T_bat_0 > T_bat_target: # Cooling regime
-                omega_value, Q_heat_value = 4000*2*np.pi/60, -4000
+                omega_value, Q_heat_value =  4000*2*np.pi/60, -4000
             else: # Heating regime
                 omega_value, Q_heat_value = 4000*2*np.pi/60, 4000
 
