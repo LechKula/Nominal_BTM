@@ -107,7 +107,7 @@ class BatteryDynamics:
     def optimization_problem_steady_state(self, dt, T_env):
         # Works in normalized 
         Q = np.diag([10])
-        R = np.diag([1,20])   
+        R = np.diag([1,1])   
         
         #R = np.diag([1, 155000])   
         T = np.diag([1000000,1000000])
@@ -364,7 +364,7 @@ class MPC:
 
         # Define weight parameters
         Q = np.diag([10, 0.1])
-        R = np.diag([1,20])
+        R = np.diag([1,1])
         #R = np.diag([1,155000])
         
         ocp.cost.W = scipy.linalg.block_diag(Q,R)
@@ -519,9 +519,9 @@ class Controller:
         args = self.steady_state_args
         
         disturbances = self.disturbance_values
-        current_0 = disturbances[int(self.dt*(self.current_iterate ))].item()
+        current_N = disturbances[int(self.dt*(self.current_iterate + self.N))].item()
         args['p'] = cs.vertcat(
-            current_0,
+            current_N,
         )
         sol = self.steady_state_solver(
             x0 = args['x0'],
@@ -543,7 +543,7 @@ class Controller:
         omega = self.omega_scale * omega_norm
         Q_heat_norm = cs.MX.sym('Q_heat_norm')
         Q_heat = self.Q_heat_scale * Q_heat_norm #cs.MX.sym('Q_heat')
-
+        current = cs.MX.sym('I_bat')
         U = cs.vertcat(omega_norm, Q_heat_norm)
                 
         # Parameters
@@ -574,23 +574,29 @@ class Controller:
         Q_cool = mdot_c*c_coolant*(T_clout - T_clin)
 
         # Now for the actual calculations 
-        T_bat_dot_model = alpha_0/(m_battery*c_battery) * (- Q_cool + gamma*(T_env - T_bat))
-        f_T_bat_dot = cs.Function("f_model", [T_bat,U], [T_bat_dot_model], ["x", "u"], ["ode"])
+        T_bat_dot_model = alpha_0/(m_battery*c_battery) * (R_battery*current**2- Q_cool + gamma*(T_env - T_bat))
+        f_T_bat_dot = cs.Function("f_model", [T_bat, current, U], [T_bat_dot_model], ["x", "I_bat","u"], ["ode"])
 
+        # Current term should dissappear
         jac_T_bat = cs.jacobian(T_bat_dot_model, T_bat)
-        jac_T_bat_fun = cs.Function("f_dT_bat", [T_bat,U], [jac_T_bat], ["x", "u"], ["f_dT_bat"])
-
+        jac_T_bat_fun = cs.Function("f_dT_bat", [T_bat, current, U], [jac_T_bat], ["x", "I_bat", "u"], ["f_dT_bat"])
+        
+        # Current term should dissappear
         jac_U = cs.jacobian(T_bat_dot_model, U)
-        jac_U_fun = cs.Function("f_dU", [T_bat,U], [jac_U], ["x", "u"], ["f_dU"])
+        jac_U_fun = cs.Function("f_dU", [T_bat, current, U], [jac_U], ["x","I_bat", "u"], ["f_dU"])
 
-        A = jac_T_bat_fun(T_bat_target+273.15, [omega_norm_ss, Q_heat_norm_ss]).full()
-        B = jac_U_fun(T_bat_target+273.15, [omega_norm_ss, Q_heat_norm_ss]).full()
+        disturbances = self.disturbance_values
+        # Want to get cost to go, so base on current at last step in prediction horizon
+        current_N = disturbances[int(self.dt*(self.current_iterate + self.N))].item()
+     
+        A = jac_T_bat_fun(T_bat_target+273.15, current_N, [omega_norm_ss, Q_heat_norm_ss]).full()
+        B = jac_U_fun(T_bat_target+273.15, current_N, [omega_norm_ss, Q_heat_norm_ss]).full()
         B = B.reshape((1,2))
 
         a = A
         b = B
         q = 10
-        r = np.diag([1,20])
+        r = np.diag([1,1])
         
         #r = np.diag([1,155000])
         cost_to_go = scipy.linalg.solve_continuous_are(a = a, b = b, q = q, r = r).item()
@@ -683,9 +689,7 @@ class Controller:
         print("total errors", self.total_errors)
 
         pred_error = 0
-        pred_error_nn = 0
         T_bat_pred = 0
-        T_bat_pred_nn = 0
 
         
         if self.current_iterate  > 0:
@@ -736,9 +740,6 @@ class Controller:
             K1 = cs.DM.full(self.T_bat_dot_function(T_bat_k_minus_1, current, omega/self.omega_scale, Q_heat/self.Q_heat_scale)).item()
 
             T_bat_pred = T_bat_k_minus_1 + (self.dt ) * (K1) # + 2*K2 + 2*K3 + K4)
-            #T_bat_pred = T_bat_k_minus_1 + self.dt * (T_bat_dot_model)
-            pred_error_nn = T_bat_pred - T_bat_k
-            T_bat_pred_nn = T_bat_pred
 
         # Want to compare prediction at time step 0 with value at time step 1
         # So delay update of xt pred
@@ -773,4 +774,4 @@ class Controller:
         print("--------------------------------")
         self.current_iterate += 1
 
-        return omega_value, Q_heat_value, T_bat_pred_nn, T_bat_pred, pred_error_nn, pred_error
+        return omega_value, Q_heat_value, T_bat_pred, pred_error
