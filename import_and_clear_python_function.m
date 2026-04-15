@@ -1,9 +1,9 @@
 %% 
 %rmdir("c_generated_code/", 's') % Remember to uncomment when debugging
 open("Cool_and_Heat_EVBatteryCoolingSystem.slx")
-T_env = 19;
+T_env = -5;
 T_init = T_env + 273.15;
-tF =  1*2474;
+tF =  6*2474;
 t_sim = tF;
 nominal = py.importlib.import_module('nominal_acados_mpc_battery');
 
