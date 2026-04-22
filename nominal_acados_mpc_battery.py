@@ -1,17 +1,9 @@
 import casadi as cs
 import numpy as np
-import torch
-import torch.nn as nn
 from acados_template import AcadosOcpSolver, AcadosOcp, AcadosModel
 import time
 import scipy.linalg
-import matplotlib.pyplot as plt
 import pandas as pd
-import os 
-from datetime import datetime
-import ctypes
-import sys
-import csv
 
 np.random.seed(42)
 CELSIUS_TO_KELVIN = 273.15
