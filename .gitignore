@@ -6,3 +6,5 @@ slprj/
 *.mexa64
 *.json
 *.slxc
+
+battery_pulse_freq_data.mat
