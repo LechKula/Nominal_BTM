@@ -17,3 +17,20 @@ Authors: Daniel McCauley, Lech Kula
 - Model in BatteryDynamics.model
 - Steady state target input problem defined in BatteryDynamics.optimization_problem_steady_state
 - OCP defined in MPC.ocp
+
+------------------------------------------------------------------------------------------------
+# Machine integration 
+------------------------------------------------------------------------------------------------
+
+# Prerequisites 
+- Matlab 2025b or higher 
+- linux OS
+
+# Installations 
+- run the pre-check bash script  : give the feedback to the user  
+- run install bash script : install all the required libs and place them accurate w.r.t the current folder 
+- run the matlab launch script to launch the matlab application 
+
+# Embd notes 
+- load the fixed parameters as simulink parameters 
+- check the MABX limits on the current data.
