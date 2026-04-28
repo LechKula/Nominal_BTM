@@ -299,3 +299,81 @@ save('battery_combined_blackbox_with_heatpwr_TF_SS_model.mat', ...
     'G_final_SoC_from_current');
 
 fprintf('\nSaved final combined model to battery_combined_blackbox_with_heatpwr_TF_SS_model.mat\n')
+
+%% ============================================================
+%  SAVE PORTABLE FINAL MODEL FOR SIMULINK MUX/DEMUX
+%
+%  Input vector:
+%     u(1) = current_squared = current^2
+%     u(2) = omega
+%     u(3) = current
+%     u(4) = heatpwr
+%
+%  Output vector:
+%     y(1) = Tb_delta
+%     y(2) = SoC_delta
+%  ============================================================
+
+SS_final = ss(SS_battery_combined);
+TF_final = tf(SS_battery_combined);
+
+% Force names/order explicitly
+SS_final.InputName  = {'u1_current_squared'; 'u2_omega'; 'u3_current'; 'u4_heatpwr'};
+SS_final.OutputName = {'y1_Tb_delta'; 'y2_SoC_delta'};
+
+TF_final.InputName  = SS_final.InputName;
+TF_final.OutputName = SS_final.OutputName;
+
+% Extract matrices for portable use
+A_final  = SS_final.A;
+B_final  = SS_final.B;
+C_final  = SS_final.C;
+D_final  = SS_final.D;
+Ts_final = SS_final.Ts;
+
+% Dimensions
+nx_final = size(A_final,1);
+nu_final = size(B_final,2);
+ny_final = size(C_final,1);
+
+% Column-wise names and mapping
+input_order_final = {
+    'u(1) = current_squared = current^2'
+    'u(2) = omega'
+    'u(3) = current'
+    'u(4) = heatpwr'
+};
+
+output_order_final = {
+    'y(1) = Tb_delta'
+    'y(2) = SoC_delta'
+};
+
+% Transfer function numerator/denominator in cell form
+% num_cell_final{i,j} = numerator from input j to output i
+% den_cell_final{i,j} = denominator from input j to output i
+[num_cell_final, den_cell_final] = tfdata(TF_final);
+
+save('battery_final_portable_mux_demux_model.mat', ...
+    'SS_final', ...
+    'TF_final', ...
+    'A_final', ...
+    'B_final', ...
+    'C_final', ...
+    'D_final', ...
+    'Ts_final', ...
+    'nx_final', ...
+    'nu_final', ...
+    'ny_final', ...
+    'num_cell_final', ...
+    'den_cell_final', ...
+    'input_order_final', ...
+    'output_order_final');
+
+fprintf('\nSaved portable Mux/Demux model to battery_final_portable_mux_demux_model.mat\n');
+
+fprintf('\nInput vector order for Mux:\n');
+disp(input_order_final)
+
+fprintf('\nOutput vector order for Demux:\n');
+disp(output_order_final)
